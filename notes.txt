@@ -1,0 +1,36 @@
+
+# stdin and stdout for commands
+
+# NUMEQUALTO value – Print out the number of variables 
+# that are currently set to value. If no variables equal 
+# that value, print 0.
+
+-------
+
+# BEGIN – Open a new transaction block. Transaction blocks 
+# can be nested; a BEGIN can be issued inside of an existing 
+# block. (LIFO)
+
+# ROLLBACK – Undo all of the commands issues in the most 
+# recent transaction block, and close the block. Print 
+# nothing if successful, or print NO TRANSACTION if no 
+# transaction is in progress.
+
+# COMMIT – Close all open transaction blocks, permanently
+# applying the changes made in them. Print nothing if 
+# successful, or print NO TRANSACTION if no transaction is 
+# in progress.
+
+# Any data command that is run outside of a transaction 
+# block should commit immediately. 
+
+
+
+# The most common operations are GET, SET, UNSET, and 
+# NUMEQUALTO. All of these commands should have an expected 
+# worst-case runtime of O(log N) or better, where N is the 
+# total number of variables stored in the database.
+
+# The vast majority of transactions will only update a 
+# small number of variables. Accordingly, your solution 
+# should be efficient about how much memory transactions use.
